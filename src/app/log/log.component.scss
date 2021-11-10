@@ -1,0 +1,12 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  width: max-content;
+  height: max-content;
+  flex-shrink: 0;
+  white-space: pre-wrap;
+}

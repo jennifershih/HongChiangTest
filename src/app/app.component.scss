@@ -1,0 +1,34 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.navigation-bar {
+  height: max-content;
+  min-width: min-content;
+}
+.navigation-drawer {
+  width: 320px;
+  min-height: 0;
+  flex-shrink: 0;
+  min-width: min-content;
+}
+.views-container {
+  position: relative;
+  flex-grow: 1;
+}
+.navigation-drawer_1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.row-layout {
+  align-items: stretch;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+}
+.row {
+  display: flex;
+}

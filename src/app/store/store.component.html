@@ -1,0 +1,95 @@
+<igx-grid [data]="dataSource1StoreTable1" rowSelection="multiple" [autoGenerate]="false" width="1274px" height="477px" displayDensity="cosy" primaryKey="店家名稱" class="grid">
+  <igx-column field="店家名稱" header="店家名稱" title="店家名稱" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="店家地址" header="店家地址" title="店家地址" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="店家案號" header="店家案號" title="店家案號" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="店家編號" header="店家編號" title="店家編號" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="加入日期" header="加入日期" title="加入日期" dataType="date" [sortable]="true"></igx-column>
+  <igx-column field="到期時間" header="到期時間" title="到期時間" dataType="date" [sortable]="true"></igx-column>
+  <igx-column field="到期" header="到期" title="到期" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="關閉" header="關閉" title="關閉" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="Gateway" header="Gateway" title="Gateway" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="車子" header="車子" title="車子" dataType="string" [sortable]="true"></igx-column>
+  <igx-column field="所屬業務" header="所屬業務" title="所屬業務" dataType="string" [sortable]="true"></igx-column>
+  <igx-paginator [perPage]="10"></igx-paginator>
+</igx-grid>
+<button igxButton="raised" igxButtonColor="var(--igx-surface-500)" igxButtonBackground="var(--igx-secondary-800)" [disabled]="false" [igxToggleAction]="dialogWindowAddStore" class="button">
+  <igx-icon>add</igx-icon>
+  <span>建立店家</span>
+</button>
+<button igxButton="raised" igxButtonColor="var(--igx-grays-900)" igxButtonBackground="var(--igx-surface-500)" [disabled]="false" [igxToggleAction]="dialogWindowDeleteStore" class="button_1">
+  <span>刪除</span>
+</button>
+<h5 class="title">店家列表[測試改設計]</h5>
+<igx-icon font="material" [active]="true" class="icon">search</igx-icon>
+<igx-icon font="material" [active]="true" class="icon_1">home</igx-icon>
+<p class="text">搜尋店家編號、案號、店家名稱</p>
+<p class="text_1">全部10|快到期2|快到期2</p>
+<igx-dialog message="是否確認永久刪除店家？" leftButtonLabel="取消" rightButtonLabel="確認" [closeOnOutsideSelect]="true" [closeOnEscape]="true" (rightButtonSelect)="dialogWindowDeleteStore.toggle()" (leftButtonSelect)="dialogWindowDeleteStore.toggle()" #dialogWindowDeleteStore class="dialog-window">
+  <igx-dialog-title>建立店家</igx-dialog-title>
+</igx-dialog>
+<igx-select type="border" [disabled]="false" class="select">
+  <igx-select-item [isHeader]="false" value="Option" [disabled]="false">
+    Option
+  </igx-select-item>
+</igx-select>
+<igx-dialog [closeOnOutsideSelect]="true" [closeOnEscape]="true" #dialogWindowAddStore class="dialog-window">
+  <igx-dialog-title>建立店家</igx-dialog-title>
+  <div igxDialogActions>
+    <button igxButton="flat" igxButtonColor="var(--igx-surface-500)" igxButtonBackground="var(--igx-secondary-800)" [disabled]="false" [igxToggleAction]="dialogWindowAddStore" class="button_2">
+      <span>確認</span>
+    </button>
+  </div>
+  <div>
+    <igx-input-group placeholder="請輸入品牌名稱" type="border" class="user-input">
+      <label igxLabel for="inputField">品牌名稱</label>
+      <input type="text" name="inputField" [required]="true" [disabled]="false" placeholder="請輸入品牌名稱" igxInput />
+    </igx-input-group>
+    <igx-input-group placeholder="請輸入店家區域" type="border" class="user-input">
+      <label igxLabel for="inputField">店家區域</label>
+      <input type="text" name="inputField" [required]="true" [disabled]="false" placeholder="請輸入店家區域" igxInput />
+    </igx-input-group>
+    <igx-input-group placeholder="請輸入店家地址" type="border" class="user-input">
+      <label igxLabel for="inputField"> 店家地址</label>
+      <input type="text" name="inputField" [required]="true" [disabled]="false" placeholder="請輸入店家地址" igxInput />
+    </igx-input-group>
+    <igx-input-group placeholder="請輸入店家案號" type="border" class="user-input">
+      <label igxLabel for="inputField"> 店家案號</label>
+      <input type="text" name="inputField" [required]="true" [disabled]="false" placeholder="請輸入店家案號" igxInput />
+    </igx-input-group>
+    <igx-input-group placeholder="請輸入店家編號" type="border" class="user-input">
+      <label igxLabel for="inputField"> 店家編號</label>
+      <input type="text" name="inputField" [required]="true" [disabled]="false" placeholder="請輸入店家編號" igxInput />
+    </igx-input-group>
+    <igx-input-group placeholder="請輸入品牌名稱" type="border" class="user-input">
+      <label igxLabel for="inputField"> 加入日期</label>
+      <input name="inputField" [required]="true" [disabled]="false" placeholder="請輸入品牌名稱" igxInput igxDateTimeEditor="yyyy/MM/dd" displayFormat="shortDate" [spinLoop]="true" />
+    </igx-input-group>
+    <igx-input-group placeholder="請輸入品牌名稱" type="border" class="user-input">
+      <label igxLabel for="inputField">到期時間</label>
+      <input name="inputField" [required]="true" [disabled]="false" placeholder="請輸入品牌名稱" igxInput igxDateTimeEditor="yyyy/MM/dd" displayFormat="shortDate" [spinLoop]="true" />
+    </igx-input-group>
+  </div>
+</igx-dialog>
+<igx-card type="outlined" class="card">
+  <igx-card-header>
+    <h3 igxCardHeaderTitle></h3>
+    <h5 igxCardHeaderSubtitle></h5>
+  </igx-card-header>
+  <igx-card-content class="content">
+    <p class="text_2"></p>
+  </igx-card-content>
+  <igx-card-actions class="actions">
+    <button igxButton="flat" [disabled]="false" class="user-input">
+      <span>Button</span>
+    </button>
+    <button igxButton="icon" type="icon" [disabled]="false">
+      <igx-icon>favorite</igx-icon>
+    </button>
+    <button igxButton="icon" type="icon" [disabled]="false">
+      <igx-icon>bookmark</igx-icon>
+    </button>
+    <button igxButton="icon" type="icon" [disabled]="false">
+      <igx-icon>share</igx-icon>
+    </button>
+  </igx-card-actions>
+</igx-card>
